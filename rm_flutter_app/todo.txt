@@ -1,0 +1,22 @@
+build out recipe view
+---
+time 
+people
+ macros (cal protein/carb/fat)
+ingredients
+directions
+
+home page view:
+time bookmark
+title image
+
+
+
+bottom nav:
+home profile bookmarks 
+
+creation: 
+macros (cal protein/carb/fat)
+people: slider?
+ingredients:
+steps
