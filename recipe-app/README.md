@@ -1,23 +1,16 @@
-# Recipe App made with Flutter
-![alt text](https://i.imgur.com/8hyAs0W.png)
+# flutter_application_1
 
-# 🤝 Support Us  
-Buy me a coffe: https://www.buymeacoffee.com/MadeWithFlutter  
-Patreon: https://www.patreon.com/MadeWithFlutter  
+A new Flutter project.
 
-# 🙏 Remember that all this is free so do not be afraid to smash that thumbs up button on YouTube video to help me to reach more people 🙏
+## Getting Started
 
-YouTube: https://www.youtube.com/MadeWithFlutter :fire::fire::fire:
+This project is a starting point for a Flutter application.
 
-I hope you liked it, and dont forget to LIKE :blush:, SUBSCRIBE :kissing_closed_eyes:, SHARE :smirk: this video with your friends, and STAR :heart_eyes: the repository on GitHub!
+A few resources to get you started if this is your first Flutter project:
 
-# 📢 Social Media
-GitHub: https://github.com/gerfagerfa  
-Facebook: https://www.facebook.com/MadeWithFlutter  
-Twitter: https://twitter.com/AllAboutFlutter  
+- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-# 💻 Want to hire me?
-LinkedIn: https://www.linkedin.com/in/gerfagerfa
-
-Hope you guys enjoy it !  
-:wave::wave::wave:
+For help getting started with Flutter, view our
+[online documentation](https://flutter.dev/docs), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.

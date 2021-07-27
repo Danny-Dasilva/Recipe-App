@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9683980-238a-4871-bc43-b1207bd76b4a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipe-app/lib/detail.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipe-app/lib/explore.dart" beforeDir="false" afterPath="$PROJECT_DIR$/recipe-app/lib/explore.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

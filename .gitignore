@@ -1,2 +1,6 @@
 /recipe-app/android
 /recipe-app/ios
+/recipe-app/build
+/recipe-app/.dart_tool
+/recipe-app/.flutter-plugins*
+/recipe-app/.packages
