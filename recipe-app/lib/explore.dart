@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:recipe/constants.dart';
 import 'package:recipe/shared.dart';
 import 'package:recipe/data.dart';
+import 'package:recipe/detail.dart';
 
 class Explore extends StatefulWidget {
   Explore({Key key}) : super(key: key);
@@ -42,30 +43,43 @@ class _ExploreState extends State<Explore> {
               children: [
                 Padding(
                   padding: EdgeInsets.symmetric(
-                    horizontal: 16,
+                    horizontal: 0,
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      buildTextTitleVariation1('Springy Salads'),
-                      buildTextSubTitleVariation1(
-                          'Healthy and nutritious food recipes'),
-                      SizedBox(
-                        height: 32,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          option('Vegetable', 'assets/icons/salad.png', 0),
-                          SizedBox(
-                            width: 8,
-                          ),
-                          option('Rice', 'assets/icons/rice.png', 1),
-                          SizedBox(
-                            width: 8,
-                          ),
-                          option('Fruit', 'assets/icons/fruit.png', 2),
-                        ],
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 30),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            buildTextTitleVariation1('Springy Salads'),
+                            buildTextSubTitleVariation1(
+                                'Healthy and nutritious food recipes'),
+                            SizedBox(
+                              height: 32,
+                            ),
+                            Container(
+                              height: 40,
+                              child: ListView(
+                                physics: BouncingScrollPhysics(),
+                                scrollDirection: Axis.horizontal,
+                                children: [
+                                  option(
+                                      'Vegetable', 'assets/icons/salad.png', 0),
+                                  SizedBox(
+                                    width: 8,
+                                  ),
+                                  option('Rice', 'assets/icons/rice.png', 1),
+                                  SizedBox(
+                                    width: 8,
+                                  ),
+                                  option('Fruit', 'assets/icons/fruit.png', 2),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                       SizedBox(
                         height: 24,
@@ -162,49 +176,55 @@ class _ExploreState extends State<Explore> {
   }
 
   Widget buildRecipe(Recipe recipe, int index) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.all(
-          Radius.circular(20),
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => Detail(recipe: recipe)));
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.all(
+            Radius.circular(20),
+          ),
+          boxShadow: [kBoxShadow],
         ),
-        boxShadow: [kBoxShadow],
-      ),
-      margin: EdgeInsets.only(
-          right: 16, left: index == 0 ? 16 : 0, bottom: 16, top: 8),
-      padding: EdgeInsets.all(16),
-      width: 220,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Expanded(
-            child: Hero(
-              tag: recipe.image,
-              child: Container(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(recipe.image),
-                    fit: BoxFit.contain,
+        margin: EdgeInsets.only(
+            right: 16, left: index == 0 ? 16 : 0, bottom: 16, top: 8),
+        padding: EdgeInsets.all(16),
+        width: 220,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Expanded(
+              child: Hero(
+                tag: recipe.image,
+                child: Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(recipe.image),
+                      fit: BoxFit.contain,
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-          SizedBox(
-            height: 8,
-          ),
-          buildRecipeTitle(recipe.title),
-          buildTextSubTitleVariation2(recipe.description),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              buildCalories(recipe.calories.toString() + " Kcal"),
-              Icon(
-                Icons.favorite_border,
-              ),
-            ],
-          ),
-        ],
+            SizedBox(
+              height: 8,
+            ),
+            buildRecipeTitle(recipe.title),
+            buildTextSubTitleVariation2(recipe.description),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                buildCalories(recipe.calories.toString() + " Kcal"),
+                Icon(
+                  Icons.favorite_border,
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -219,52 +239,49 @@ class _ExploreState extends State<Explore> {
 
   Widget buildPopular(Recipe recipe) {
     return Container(
-      margin: EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.all(
-          Radius.circular(20)
+        margin: EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.all(Radius.circular(20)),
+          boxShadow: [kBoxShadow],
         ),
-        boxShadow: [kBoxShadow],
-      ),
-      child: Row(
-        children: [
-          Container(
-            height: 160,
-            width: 160,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(recipe.image),
-                fit: BoxFit.fitHeight,
+        child: Row(
+          children: [
+            Container(
+              height: 160,
+              width: 160,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(recipe.image),
+                  fit: BoxFit.fitHeight,
+                ),
               ),
             ),
-          ),
-          Expanded(child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16,),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                buildRecipeTitle(recipe.title),
-                buildRecipeSubTitle(recipe.description),
-
-                 Row( 
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            Expanded(
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 16,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    buildCalories(recipe.calories.toString() + " Kcal"),
-                    Icon(
-                      Icons.favorite_border,
+                    buildRecipeTitle(recipe.title),
+                    buildRecipeSubTitle(recipe.description),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        buildCalories(recipe.calories.toString() + " Kcal"),
+                        Icon(
+                          Icons.favorite_border,
+                        ),
+                      ],
                     ),
                   ],
                 ),
-              ],
+              ),
             ),
-          
-          ),
-          ),
-
-        ],
-      )
-    );
+          ],
+        ));
   }
 }
