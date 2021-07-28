@@ -49,7 +49,7 @@ class _ExploreState extends State<Explore> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 30),
+                        padding: EdgeInsets.symmetric(horizontal: 16),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -64,17 +64,23 @@ class _ExploreState extends State<Explore> {
                               child: ListView(
                                 physics: BouncingScrollPhysics(),
                                 scrollDirection: Axis.horizontal,
+                                clipBehavior: Clip.none,
                                 children: [
                                   option(
                                       'Vegetable', 'assets/icons/salad.png', 0),
                                   SizedBox(
-                                    width: 8,
+                                    width: 10,
                                   ),
                                   option('Rice', 'assets/icons/rice.png', 1),
                                   SizedBox(
-                                    width: 8,
+                                    width: 10,
                                   ),
                                   option('Fruit', 'assets/icons/fruit.png', 2),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  option('Fruit', 'assets/icons/fruit.png', 2),
+                                  
                                 ],
                               ),
                             ),
