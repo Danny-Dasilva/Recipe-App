@@ -1,6 +1,6 @@
-# flutter_application_1
+# recipe app
 
-A new Flutter project.
+Default setup
 
 ## Getting Started
 
