@@ -5,3 +5,5 @@ androidsdk "platform-tools" "platforms;android-29"
 
 
 flutter pub get
+
+flutter packages get

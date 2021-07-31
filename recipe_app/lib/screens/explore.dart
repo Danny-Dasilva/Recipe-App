@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:recipe/constants.dart';
 import 'package:recipe/shared.dart';
 import 'package:recipe/data.dart';
-import 'package:recipe/detail.dart';
+import 'package:recipe/screens/detail.dart';
 
 class Explore extends StatefulWidget {
   Explore({Key key}) : super(key: key);

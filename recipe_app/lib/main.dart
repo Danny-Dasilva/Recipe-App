@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:recipe/explore.dart';
+import 'package:recipe/screens/master.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         textTheme: GoogleFonts.montserratTextTheme(),
       ),
       debugShowCheckedModeBanner: false,
-      home: Explore(),
+      home: Master(),
     );
   }
 }

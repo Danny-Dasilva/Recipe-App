@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 Color kPrimaryColor = Color(0xFF27AE60);
 
+Color kBottomNavigationBar = Color(0xFF202125);
+
 BoxShadow kBoxShadow = BoxShadow(
   color: Colors.grey.withOpacity(0.2),
   spreadRadius: 2,
