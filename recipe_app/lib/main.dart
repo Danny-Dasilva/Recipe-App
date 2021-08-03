@@ -1,7 +1,9 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:recipe/screens/master.dart';
-
+import 'package:recipe/widgets/drawer_widget.dart';
 void main() {
   runApp(MyApp());
 }
@@ -20,4 +22,14 @@ class MyApp extends StatelessWidget {
       home: Master(),
     );
   }
+}
+
+class _MasterState extends State<Master> {
+  @override
+  Widget build(BuildContext context) => Scaffold(
+    body: buildDrawer(),
+  );
+
+
+  Widget buildDrawer() => DrawerWidget();
 }
