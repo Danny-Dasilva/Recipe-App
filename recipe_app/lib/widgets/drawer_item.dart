@@ -13,8 +13,15 @@ class DrawerItem {
 
 
 class DrawerItems {
-  static const home = DrawerItem(
-    title: 'Home',
-    icon: FontAwesomeIcons.home
-    );
+  static const home = DrawerItem(title: 'Home', icon: FontAwesomeIcons.home);
+
+  static const explore = DrawerItem(title: 'Explore', icon: Icons.explore);
+
+  static const favorites = DrawerItem(title: 'Favorites', icon: Icons.favorite);
+
+  static final List<DrawerItem> all = [
+    home,
+    explore,
+    favorites,
+  ];
 }
