@@ -95,7 +95,7 @@ class _ExploreState extends State<Explore> {
                         child: ListView(
                           physics: BouncingScrollPhysics(),
                           scrollDirection: Axis.horizontal,
-                          children: buildRecipes(),
+                          // children: buildRecipes(),
                         ),
                       ),
                       SizedBox(
@@ -119,7 +119,7 @@ class _ExploreState extends State<Explore> {
                         height: 190,
                         child: PageView(
                           physics: BouncingScrollPhysics(),
-                          children: buildPopulars(),
+                          // children: buildPopulars(),
                         ),
                       )
                     ],
@@ -173,13 +173,13 @@ class _ExploreState extends State<Explore> {
     );
   }
 
-  List<Widget> buildRecipes() {
-    List<Widget> list = [];
-    for (var i = 0; i < getRecipes().length; i++) {
-      list.add(buildRecipe(getRecipes()[i], i));
-    }
-    return list;
-  }
+  // List<Widget> buildRecipes() {
+  //   List<Widget> list = [];
+  //   for (var i = 0; i < getRecipes().length; i++) {
+  //     list.add(buildRecipe(getRecipes()[i], i));
+  //   }
+  //   return list;
+  // }
 
   Widget buildRecipe(Recipe recipe, int index) {
     return GestureDetector(
@@ -235,13 +235,13 @@ class _ExploreState extends State<Explore> {
     );
   }
 
-  List<Widget> buildPopulars() {
-    List<Widget> list = [];
-    for (var i = 0; i < getRecipes().length; i++) {
-      list.add(buildPopular(getRecipes()[i]));
-    }
-    return list;
-  }
+  // List<Widget> buildPopulars() {
+  //   List<Widget> list = [];
+  //   for (var i = 0; i < getRecipes().length; i++) {
+  //     list.add(buildPopular(getRecipes()[i]));
+  //   }
+  //   return list;
+  // }
 
   Widget buildPopular(Recipe recipe) {
     return Container(
